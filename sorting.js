@@ -9,7 +9,7 @@ exports.mergeSort = function mergeSort(input) {
 			left.push(input[i]);
 		}
 
-		for (var j = midPoint; j < input.length - 1; j++) {
+		for (var j = midPoint; j < input.length; j++) {
 			right.push(input[j]);
 		}
 
@@ -53,7 +53,7 @@ function merge(left, right) {
 function rest(input) {
 	var result = [];
 
-	for (var i = 1; i < input.count - 1; i++) {
+	for (var i = 1; i < input.length; i++) {
 		result.push(input[i]);
 	}
 
@@ -69,7 +69,7 @@ exports.quickSort = function quickSort(input) {
 
 function validateSortData(input) {
 	if (input.length <= 1) {
-		console.log("Input is 1 element and is therefore already sorted.");
+		//console.log("Input is 1 element and is therefore already sorted.");
 		return false;
 	}
 
