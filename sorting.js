@@ -96,10 +96,37 @@ exports.quickSort = function quickSort(input, left, right) {
 };
 
 function partition (input, left, right) {
+	var pivotIndex = choosePivot(input, left, right);
+	var pivotValue = input[pivotIndex];
+	var storedIndex = left;
 
+	input = swap(input, pivotIndex, right);
+
+	for (var i = left; i < right; i++) {
+		if(input[i] <= pivotValue) {
+			input = swap(input, i, storedIndex);
+			storedIndex = storedIndex + 1;
+		}
+
+		input = swap(input, storedIndex, right);
+	}
+
+	return storedIndex;
 };
 
-function choosePivot (input) {
+function swap (input, left, right) {
+	var temp = input[left];
+	input[left] = input[right];
+	input[right] = temp;
+
+	return input;
+};
+
+function choosePivot (input, left, right) {
+	return 0;  // for now...
+};
+
+function choosePivotOld (input) {
 	// first find the three possible values.
 	var first = input[0];
 	var last = input[input.length - 1];

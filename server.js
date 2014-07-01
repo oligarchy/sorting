@@ -15,14 +15,14 @@ toSort.push(54);
 
 console.log("To Sort: " + toSort.join(", "));
 
-var mergeSorted = sorter.mergeSort(toSort);
+// var mergeSorted = sorter.mergeSort(toSort);
 
-if (mergeSorted !== null && mergeSorted !== undefined) {
-	console.log("Sorted: " + mergeSorted.join(", "));
-}
-else {
-	console.log("No MergeSort Results.");
-}
+// if (mergeSorted !== null && mergeSorted !== undefined) {
+// 	console.log("Sorted: " + mergeSorted.join(", "));
+// }
+// else {
+// 	console.log("No MergeSort Results.");
+// }
 
 var quickSorted = sorter.quickSort(toSort, 1, toSort.length - 1);
 
