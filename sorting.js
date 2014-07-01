@@ -61,32 +61,42 @@ function rest(input) {
 };
 
 function validateSortData(input) {
-	if (input.length <= 1) {
-		//console.log("Input is 1 element and is therefore already sorted.");
+	if (input.length === 1) {
+		// array of 1 is already sorted.
 		return false;
 	}
 
 	if (input === null) {
-		console.log("Input is null.");
 		return false;
 	}
 
 	if (input.length === 0) {
-		console.log("No elements to sort.");
 		return false;
 	}
-
-	//console.log(input.length + " items to sort.");
-	//console.log(input.join(", "));
 
 	return true;
 };
 
-exports.quickSort = function quickSort(input) {
-	console.log("Quick Sort");
+exports.quickSort = function quickSort(input, left, right) {
 	if (validateSortData(input)) {
+		if (left < right) {
+			var part = partition(input, left, right);
+			input = quickSort(input, left, part - 1);
+			input = quickSort(input, part + 1, right);
 
+			return input;
+		}
+		else {
+			return input;
+		}
 	}
+	else {
+		return input;
+	}
+};
+
+function partition (input, left, right) {
+
 };
 
 function choosePivot (input) {

@@ -1,7 +1,4 @@
 var sorter = require("./sorting");
-
-console.log("Started");
-
 var toSort = [];
 
 toSort.push(101);
@@ -16,6 +13,8 @@ toSort.push(0);
 toSort.push(17);
 toSort.push(54);
 
+console.log("To Sort: " + toSort.join(", "));
+
 var mergeSorted = sorter.mergeSort(toSort);
 
 if (mergeSorted !== null && mergeSorted !== undefined) {
@@ -25,7 +24,7 @@ else {
 	console.log("No MergeSort Results.");
 }
 
-var quickSorted = sorter.quickSort(toSort);
+var quickSorted = sorter.quickSort(toSort, 1, toSort.length - 1);
 
 if (quickSorted !== null && quickSorted !== undefined) {
 	console.log("Quick Sorted: " + quickSorted.join(", "));
