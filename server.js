@@ -16,11 +16,20 @@ toSort.push(0);
 toSort.push(17);
 toSort.push(54);
 
-var sorted = sorter.mergeSort(toSort);
+var mergeSorted = sorter.mergeSort(toSort);
 
-if (sorted !== null && sorted !== undefined) {
-	console.log("Sorted: " + sorted.join(", "));
+if (mergeSorted !== null && mergeSorted !== undefined) {
+	console.log("Sorted: " + mergeSorted.join(", "));
 }
 else {
-	console.log("Nothing to report.");
+	console.log("No MergeSort Results.");
+}
+
+var quickSorted = sorter.quickSort(toSort);
+
+if (quickSorted !== null && quickSorted !== undefined) {
+	console.log("Quick Sorted: " + quickSorted.join(", "));
+}
+else {
+	console.log("No QuickSort Results.");
 }

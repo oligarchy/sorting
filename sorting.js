@@ -60,13 +60,6 @@ function rest(input) {
 	return result;
 };
 
-exports.quickSort = function quickSort(input) {
-	console.log("Quick Sort");
-	if (validateSortData(input)) {
-
-	}
-};
-
 function validateSortData(input) {
 	if (input.length <= 1) {
 		//console.log("Input is 1 element and is therefore already sorted.");
@@ -83,10 +76,17 @@ function validateSortData(input) {
 		return false;
 	}
 
-	console.log(input.length + " items to sort.");
-	console.log(input.join(", "));
+	//console.log(input.length + " items to sort.");
+	//console.log(input.join(", "));
 
 	return true;
+};
+
+exports.quickSort = function quickSort(input) {
+	console.log("Quick Sort");
+	if (validateSortData(input)) {
+
+	}
 };
 
 function choosePivot (input) {
