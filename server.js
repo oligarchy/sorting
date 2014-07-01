@@ -18,6 +18,9 @@ toSort.push(54);
 
 var sorted = sorter.mergeSort(toSort);
 
-if (sorted !== null) {
-	console.log(sorted.join(", "));
+if (sorted !== null && sorted !== undefined) {
+	console.log("Sorted: " + sorted.join(", "));
+}
+else {
+	console.log("Nothing to report.");
 }
