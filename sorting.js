@@ -77,10 +77,16 @@ function validateSortData(input) {
 	return true;
 };
 
+var toSort = null;
+
 exports.quickSort = function quickSort(input, left, right) {
+	if (toSort == null) {
+		toSort = input;
+	}
+
 	if (validateSortData(input)) {
 		if (left < right) {
-			var part = partition(input, left, right);
+			var part = partition(toSort, left, right);
 			input = quickSort(input, left, part - 1);
 			input = quickSort(input, part + 1, right);
 
@@ -100,7 +106,7 @@ function partition (input, left, right) {
 	var pivotValue = input[pivotIndex];
 	var storedIndex = left;
 
-	input = swap(input, pivotIndex, right);
+	input = swap(toSort, pivotIndex, right);
 
 	for (var i = left; i < right; i++) {
 		if(input[i] <= pivotValue) {
@@ -108,7 +114,7 @@ function partition (input, left, right) {
 			storedIndex = storedIndex + 1;
 		}
 
-		input = swap(input, storedIndex, right);
+		input = swap(toSort, storedIndex, right);
 	}
 
 	return storedIndex;
@@ -123,7 +129,7 @@ function swap (input, left, right) {
 };
 
 function choosePivot (input, left, right) {
-	return 0;  // for now...
+	return left;  // for now...
 };
 
 function choosePivotOld (input) {
