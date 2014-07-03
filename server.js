@@ -24,7 +24,7 @@ console.log("To Sort: " + toSort.join(", "));
 // 	console.log("No MergeSort Results.");
 // }
 
-var quickSorted = sorter.quickSort(toSort, 1, toSort.length - 1);
+var quickSorted = sorter.qsort(toSort, 0);
 
 if (quickSorted !== null && quickSorted !== undefined) {
 	console.log("Quick Sorted: " + quickSorted.join(", "));
